@@ -1,0 +1,9 @@
+C:\Users\Carambula\Desktop\Учёба\MOPE\MOPEUtils\bin\Debug\netcoreapp3.1\MOPEUtils.deps.json
+C:\Users\Carambula\Desktop\Учёба\MOPE\MOPEUtils\bin\Debug\netcoreapp3.1\MOPEUtils.dll
+C:\Users\Carambula\Desktop\Учёба\MOPE\MOPEUtils\bin\Debug\netcoreapp3.1\MOPEUtils.pdb
+C:\Users\Carambula\Desktop\Учёба\MOPE\MOPEUtils\obj\Debug\netcoreapp3.1\MOPEUtils.csprojAssemblyReference.cache
+C:\Users\Carambula\Desktop\Учёба\MOPE\MOPEUtils\obj\Debug\netcoreapp3.1\MOPEUtils.AssemblyInfoInputs.cache
+C:\Users\Carambula\Desktop\Учёба\MOPE\MOPEUtils\obj\Debug\netcoreapp3.1\MOPEUtils.AssemblyInfo.cs
+C:\Users\Carambula\Desktop\Учёба\MOPE\MOPEUtils\obj\Debug\netcoreapp3.1\MOPEUtils.csproj.CoreCompileInputs.cache
+C:\Users\Carambula\Desktop\Учёба\MOPE\MOPEUtils\obj\Debug\netcoreapp3.1\MOPEUtils.dll
+C:\Users\Carambula\Desktop\Учёба\MOPE\MOPEUtils\obj\Debug\netcoreapp3.1\MOPEUtils.pdb
