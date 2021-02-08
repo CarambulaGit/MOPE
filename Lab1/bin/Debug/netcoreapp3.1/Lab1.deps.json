@@ -7,14 +7,27 @@
   "targets": {
     ".NETCoreApp,Version=v3.1": {
       "Lab1/1.0.0": {
+        "dependencies": {
+          "MOPEUtils": "1.0.0"
+        },
         "runtime": {
           "Lab1.dll": {}
+        }
+      },
+      "MOPEUtils/1.0.0": {
+        "runtime": {
+          "MOPEUtils.dll": {}
         }
       }
     }
   },
   "libraries": {
     "Lab1/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MOPEUtils/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
