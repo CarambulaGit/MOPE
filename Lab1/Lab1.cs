@@ -79,8 +79,8 @@ namespace Lab1 {
 
         private float FindYWhichSatisfiesCriterion() {
             var average = yArr.Average();
-            var tempList = yArr.Select(y => y - average).ToList();
-            return tempList.Where(y => y >= 0).Min() + average;
+            var localYArr = yArr.Select(y => y - average).ToList();
+            return localYArr.Where(y => y >= 0).Min() + average;
         }
 
         private List<float[]> FindListOfFactsWhichGenYByCrit(float yByCriterion) {
@@ -108,7 +108,11 @@ namespace Lab1 {
 
         private static void Main(string[] args) {
             var sol = new Lab1(new float[3][], 1, 2, 3, 4, 0, 20);
-            sol.RunExperiment().ToArray().Print();
+            sol.RunExperiment().ToArray().Print(true);
+            Console.WriteLine();
+            sol.experiments.Print(true);
+            new[] {sol.yArr}.Print(true);
+            sol.experimentsNormalized.Print(true);
         }
     }
 }
