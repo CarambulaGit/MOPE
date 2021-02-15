@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab1", "Lab1\Lab1.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MOPEUtils", "MOPEUtils\MOPEUtils.csproj", "{0B06130E-A633-4C20-8126-924E91344CE4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab2", "Lab2\Lab2.csproj", "{697977F6-847C-4429-9C22-8A9F2B58BBA5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{0B06130E-A633-4C20-8126-924E91344CE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0B06130E-A633-4C20-8126-924E91344CE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0B06130E-A633-4C20-8126-924E91344CE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{697977F6-847C-4429-9C22-8A9F2B58BBA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{697977F6-847C-4429-9C22-8A9F2B58BBA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{697977F6-847C-4429-9C22-8A9F2B58BBA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{697977F6-847C-4429-9C22-8A9F2B58BBA5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
