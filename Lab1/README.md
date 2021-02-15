@@ -1,1 +1,1 @@
-![RunScreenshoot](./Lab1/runScreenshoot.png)
+![RunScreenshoot](/Lab1/runScreenshoot.png)
