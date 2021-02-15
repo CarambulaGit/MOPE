@@ -111,7 +111,9 @@ namespace Lab1 {
             sol.RunExperiment().ToArray().Print(true);
             Console.WriteLine();
             sol.experiments.Print(true);
+            Console.WriteLine();
             new[] {sol.yArr}.Print(true);
+            Console.WriteLine();
             sol.experimentsNormalized.Print(true);
         }
     }
