@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using MOPEUtils;
 
@@ -107,14 +108,18 @@ namespace Lab1 {
         }
 
         private static void Main(string[] args) {
+            var stopwatch = new Stopwatch();
+            stopwatch.Start();
             var sol = new Lab1(new float[3][], 1, 2, 3, 4, 0, 20);
             sol.RunExperiment().ToArray().Print(true);
+            stopwatch.Stop();
             Console.WriteLine();
             sol.experiments.Print(true);
             Console.WriteLine();
             new[] {sol.yArr}.Print(true);
             Console.WriteLine();
             sol.experimentsNormalized.Print(true);
+            Console.WriteLine($"\nExperiment time = {stopwatch.ElapsedMilliseconds} ms");
         }
     }
 }
