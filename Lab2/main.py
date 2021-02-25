@@ -58,6 +58,12 @@ def main():
                     p = rkr
         return probList[p]
 
+    def findFuv(u, v):
+        if u >= v:
+            return u / v
+        else:
+            return v / u
+
     def printResults():
         for i in range(3):
             print(f"Y{i + 1}: {yMatrix[i]}, Average: {averageYArr[i]}")
@@ -92,9 +98,9 @@ def main():
 
     sigmaTeta = math.sqrt((2 * (2 * numOfExperiments - 2)) / (numOfExperiments * (numOfExperiments - 4)))
 
-    Fuv1 = sigma2_1 / sigma2_2
-    Fuv2 = sigma2_3 / sigma2_1
-    Fuv3 = sigma2_3 / sigma2_2
+    Fuv1 = findFuv(sigma2_1, sigma2_2)
+    Fuv2 = findFuv(sigma2_3, sigma2_1)
+    Fuv3 = findFuv(sigma2_3, sigma2_2)
 
     tetaUV1 = ((numOfExperiments - 2) / numOfExperiments) * Fuv1
     tetaUV2 = ((numOfExperiments - 2) / numOfExperiments) * Fuv2
