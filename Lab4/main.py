@@ -5,6 +5,10 @@ from scipy.stats import f, t
 from numpy.linalg import solve
 
 
+coefLinear = list()
+coefInteract = list()
+
+
 def regression(x, b):
     y = sum([x[i] * b[i] for i in range(len(x))])
     return y
@@ -153,6 +157,8 @@ def check(X, Y, B, n, m, norm=False):
     final_k = [B[i] for i in range(len(ts)) if ts[i] in res]
     print('\nКоефіцієнти {} статистично незначущі, тому ми виключаємо їх з рівняння.'.format(
         [round(i, 3) for i in B if i not in final_k]))
+    global coefInteract
+    coefInteract = final_k
 
     y_new = []
     for j in range(n):
@@ -291,6 +297,8 @@ def linear(n, m):
     final_coefficients = [B[student_t.index(i)] for i in student_t if i in res_student_t]
     print('Коефіцієнти {} статистично незначущі.'.
           format([i for i in B if i not in final_coefficients]))
+    global coefLinear
+    coefLinear = final_coefficients
 
     y_new = []
     for j in range(n):
@@ -318,6 +326,8 @@ def linear(n, m):
 def main(n, m):
     if not linear(n, m):
         with_interaction_effect(n, m)
+        print(f'До взаємодії {coefLinear}')
+        print(f'Після взаємодії {coefInteract}')
 
 
 if __name__ == '__main__':
