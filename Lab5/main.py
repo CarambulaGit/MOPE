@@ -1,4 +1,6 @@
 import random
+import time
+
 import sklearn.linear_model as lm
 from scipy.stats import f, t
 from functools import partial
@@ -10,13 +12,15 @@ def regression(x, b):
     return y
 
 
-x_range = ((-3,7), (0, 9), (-8, 10))
+x_range = ((-3, 7), (0, 9), (-8, 10))
 
 x_aver_max = sum([x[1] for x in x_range]) / 3
 x_aver_min = sum([x[0] for x in x_range]) / 3
 
 y_max = 200 + int(x_aver_max)
 y_min = 200 + int(x_aver_min)
+
+timer = 0
 
 
 # квадратна дисперсія
@@ -191,14 +195,15 @@ def check(X, Y, B, n, m):
         print("Необхідно збільшити кількість дослідів")
         m += 1
         main(n, m)
-
+    global timer
+    startTime = time.time()
     ts = kriteriy_studenta(X[:, 1:], Y, y_aver, n, m)
     print('\nКритерій Стьюдента:\n', ts)
     res = [t for t in ts if t > t_student]
     final_k = [B[i] for i in range(len(ts)) if ts[i] in res]
     print('\nКоефіцієнти {} статистично незначущі, тому ми виключаємо їх з рівняння.'.format(
         [round(i, 3) for i in B if i not in final_k]))
-
+    timer += time.time() - startTime
     y_new = []
     for j in range(n):
         y_new.append(regression([X[j][i] for i in range(len(ts)) if ts[i] in res], final_k))
@@ -236,4 +241,6 @@ def main(n, m):
 
 
 if __name__ == '__main__':
-    main(15, 5)
+    for i in range(100):
+        main(15, 5)
+    print(timer)
