@@ -146,6 +146,9 @@ def studentCriteria(m, n, y_table, betaCoeffs):
     q = 0.05
     ourT = getStudentVal(f3, q)
     importance = [True if el > ourT else False for el in list(Ti)]
+    if sum(importance) == 3:
+        print("Кількість значимих коефіцієнтів дорівнює 3, отже модель неадекватна")
+        raise ValueError()
     # print result data
     print("Оцінки коефіцієнтів βs: " + ", ".join(list(map(lambda x: str(round(float(x), 3)), betaCoeffs))))
     print("Коефіцієнти ts: " + ", ".join(list(map(lambda i: "{:.2f}".format(i), Ti))))
@@ -192,7 +195,10 @@ def main(m, n):
     printMatrix(m, n, naturalPlan, arrY, " для натуралізованих факторів:")
     coefficients = findCoeffs(naturalPlan, arrY)
     printEquation(coefficients)
-    importance = studentCriteria(m, n, arrY, coefficients)
+    try:
+        importance = studentCriteria(m, n, arrY, coefficients)
+    except:
+        return
     d = len(list(filter(None, importance)))
     fisherCriteria(m, n, d, naturalPlan, arrY, coefficients, importance)
 
