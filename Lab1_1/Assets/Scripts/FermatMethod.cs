@@ -18,20 +18,23 @@ public static class FermatMethod {
         }
 
         var multipliers = new List<long>();
-        var sqrts = GetSumOfSquares(n);
+        var sqrts = GetSumOfSquares(n, var numOfOperations);
+        Debug.Log(numOfOperations);
         multipliers.Add(Math.Abs(sqrts[0] + sqrts[1]));
         multipliers.Add(Math.Abs(sqrts[0] - sqrts[1]));
 
         return multipliers.ToArray();
     }
 
-    private static long[] GetSumOfSquares(long n) {
+    private static long[] GetSumOfSquares(long n, out int numOfOperations) {
         double x, y;
+        numOfOperations = 0
 
         x = Math.Ceiling(Math.Sqrt(n));
         y = Math.Pow(x, 2) - n;
 
         while (Math.Abs(Math.Sqrt(y) - Math.Ceiling(Math.Sqrt(y))) > 0.0001f) {
+        	numOfOperations++;
             x++;
             y = Math.Pow(x, 2) - n;
 
